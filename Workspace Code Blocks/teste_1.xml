@@ -1,0 +1,71 @@
+<xml xmlns="https://bipes.net.br">
+  <workspace>
+    <field name="DEVICE">pion_cubesat</field>
+    <field name="TIMESTAMP">1696467811675</field>
+    <freeboard><![CDATA[{"version":1,"allow_edit":true,"plugins":[],"panes":[],"datasources":[],"columns":3}]]></freeboard>
+    <databoard><![CDATA[{"currentWorkspace":"kvfgejtdtlhg0wfqod9","workspace:kvfgejtdtlhg0wfqod9":[]}]]></databoard> 
+  </workspace>
+  <variables>
+    <variable id="+78hXQ|8q?!I%[?cLt%s">leitura</variable>
+  </variables>
+  <block type="controls_repeat_ext" id="P7JccY_OuxvF]:~-fNe4" x="-337" y="-737">
+    <value name="TIMES">
+      <shadow type="math_number" id="rX$MS*APN7b4_6g[A%%B">
+        <field name="NUM">10</field>
+      </shadow>
+    </value>
+    <statement name="DO">
+      <block type="variables_set" id="_96M)^SpE*:~MWi_54L%">
+        <field name="VAR" id="+78hXQ|8q?!I%[?cLt%s">leitura</field>
+        <value name="VALUE">
+          <block type="esp32_adc" id="ay;G^%1}lp1XE@hl,W,g">
+            <field name="Attenuation">3</field>
+            <field name="Width: ">3</field>
+            <value name="pin">
+              <shadow type="pinout" id="?J:Kb;{JdbX~RGBNv|q8">
+                <field name="DEVICE">pion_cubesat</field>
+                <field name="PIN">34</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="text_print" id="J}bq*gDMW!zL6U:$s72)">
+            <value name="TEXT">
+              <shadow type="text" id="0}lgC%[!RGX*4!|^}d}6">
+                <field name="TEXT">abc</field>
+              </shadow>
+              <block type="variables_get" id="x.Zp?()05E{-^X{eHnp,">
+                <field name="VAR" id="+78hXQ|8q?!I%[?cLt%s">leitura</field>
+              </block>
+            </value>
+            <next>
+              <block type="bipes_plot" id="!1aTl1h=y(M2MstB][Sp">
+                <value name="id">
+                  <block type="math_number" id="7p/FIdKY;qxc(s:Yo+2$">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <value name="values">
+                  <block type="variables_get" id="%#dZkAaHc;s}c9T!w^L+">
+                    <field name="VAR" id="+78hXQ|8q?!I%[?cLt%s">leitura</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="delay" id="we)1U}^G{qR+N9oc8IK$">
+                    <field name="SCALE">sleep</field>
+                    <value name="TIME">
+                      <shadow type="math_number" id=":aWnHNaBLcZHToMl4b_H">
+                        <field name="NUM">1</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

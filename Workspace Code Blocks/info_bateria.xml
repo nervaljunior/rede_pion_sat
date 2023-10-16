@@ -1,0 +1,139 @@
+<xml xmlns="https://bipes.net.br">
+  <workspace>
+    <field name="DEVICE">pion_cubesat</field>
+    <field name="TIMESTAMP">1696620928098</field>
+    <freeboard><![CDATA[{"version":1,"allow_edit":true,"plugins":[],"panes":[{"width":1,"row":{"3":1},"col":{"3":1},"col_width":1,"widgets":[{"type":"gauge","settings":{"title":"LDR","value":["datasources[\"LDR\"]"],"min_value":0,"max_value":100}}]},{"width":1,"row":{"3":1},"col":{"3":3},"col_width":1,"widgets":[{"type":"sparkline","settings":{"title":"LDR","value":"datasources[\"LDR\"]","include_legend":true,"legend":"LDR"}}]}],"datasources":[{"name":"LDR","type":"BIPES Serial, USB or Bluetooth","settings":{"id":"1","refresh":1,"name":"LDR"}}],"columns":3}]]></freeboard>
+    <databoard><![CDATA[{"currentWorkspace":"kvfgejtdtlhg0wfqod9","workspace:kvfgejtdtlhg0wfqod9":[]}]]></databoard> 
+  </workspace>
+  <variables>
+    <variable id="_B_(5klg%mU?mYV]=$%o">bat</variable>
+  </variables>
+  <block type="controls_whileUntil" id="1eXqtN`x??@EWT5jvoK:" x="-321" y="-457">
+    <field name="MODE">WHILE</field>
+    <value name="BOOL">
+      <block type="logic_boolean" id="Kg*MOX5_gCjfxTjv7Oht">
+        <field name="BOOL">TRUE</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="variables_set" id="#@n:fe(723Yc~3-Y_7@@">
+        <field name="VAR" id="_B_(5klg%mU?mYV]=$%o">bat</field>
+        <value name="VALUE">
+          <block type="esp32_adc" id="DS0!idls%ef{%UQWa;/t">
+            <field name="Attenuation">3</field>
+            <field name="Width: ">3</field>
+            <value name="pin">
+              <shadow type="pinout" id="E6+3c1~g?jinUaHypTkR">
+                <field name="DEVICE">pion_cubesat</field>
+                <field name="PIN">35</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="text_print" id="%#=}1bKLegR@a?M^nx?x">
+            <value name="TEXT">
+              <shadow type="text" id="|4rG(eOanF28zvh*qcV/">
+                <field name="TEXT">abc</field>
+              </shadow>
+              <block type="text_join" id="TNz^RLRAF6DHT[S+sttR">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                  <block type="text" id="W0L#bzs04%;:GCLf*cT#">
+                    <field name="TEXT">Bat</field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="variables_get" id="b]B;f!3NM-{n#x|tU|cS">
+                    <field name="VAR" id="_B_(5klg%mU?mYV]=$%o">bat</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="controls_if" id=":!_?=H32_dwR^Bpb)#M/">
+                <value name="IF0">
+                  <block type="logic_compare" id="MnfwO=/tq}e()PoR}Od)">
+                    <field name="OP">LT</field>
+                    <value name="A">
+                      <block type="variables_get" id="L6`=$*l5V5FqL|^dXZ3h">
+                        <field name="VAR" id="_B_(5klg%mU?mYV]=$%o">bat</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="NT8B`yDh#yI1Cki1.IJ,">
+                        <field name="NUM">3000</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="text_print" id="n4rswXzpQ8M!|hT)76EV">
+                    <value name="TEXT">
+                      <shadow type="text">
+                        <field name="TEXT">abc</field>
+                      </shadow>
+                      <block type="text_join" id="==IOtlP%ABtUTv;,dh,t">
+                        <mutation items="2"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="*$KB=OyP/iz,pLg+95CR">
+                            <field name="TEXT">Bat</field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="variables_get" id="i?5/9.~AbAgbJTK,J_0e">
+                            <field name="VAR" id="_B_(5klg%mU?mYV]=$%o">bat</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="tone" id="48$s8L08%s[1SXjr11fN">
+                        <value name="pin">
+                          <shadow type="pinout" id="LAR=~P9Sp*X~(A(Hk#_=">
+                            <field name="DEVICE">pion_cubesat</field>
+                            <field name="PIN">25</field>
+                          </shadow>
+                        </value>
+                        <value name="frequency">
+                          <shadow type="math_number" id="72g%p__%`VPMO+CfLz66">
+                            <field name="NUM">1200</field>
+                          </shadow>
+                        </value>
+                        <value name="duration">
+                          <shadow type="math_number" id="tt,N;[}@jBz?OyR+#xvA">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="delay" id="Rh$}(E$*%}ck2RUC+r3}">
+                            <field name="SCALE">sleep</field>
+                            <value name="TIME">
+                              <shadow type="math_number" id="f}si,oi_Z~,.B/lhAE,:">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="delay" id=".y~A[f8h:,qgrqR;/5P~">
+                    <field name="SCALE">sleep</field>
+                    <value name="TIME">
+                      <shadow type="math_number" id="jj/[XF*cPYHI$n.XW%~h">
+                        <field name="NUM">1</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

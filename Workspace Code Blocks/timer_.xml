@@ -1,0 +1,335 @@
+<xml xmlns="https://bipes.net.br">
+  <workspace>
+    <field name="DEVICE">pion_cubesat</field>
+    <field name="TIMESTAMP">1696634448662</field>
+    <freeboard><![CDATA[{"version":1,"allow_edit":true,"plugins":[],"panes":[{"width":1,"row":{"3":1,"4":1},"col":{"3":1,"4":1},"col_width":1,"widgets":[{"type":"gauge","settings":{"title":"Temperatura","value":["datasources[\"Temperatura\"]"],"min_value":0,"max_value":100}}]},{"width":1,"row":{"3":9,"4":1},"col":{"3":1,"4":2},"col_width":1,"widgets":[{"type":"gauge","settings":{"title":"Humidade","value":["datasources[\"Humidade\"]"],"min_value":0,"max_value":100}}]},{"width":1,"row":{"3":1,"4":1},"col":{"3":3,"4":3},"col_width":1,"widgets":[{"type":"gauge","settings":{"title":"Luminosidade","value":"datasources[\"Luminosidade\"]","min_value":0,"max_value":100}}]}],"datasources":[{"name":"Temperatura","type":"BIPES Serial, USB or Bluetooth","settings":{"id":"12","refresh":1}},{"name":"Humidade","type":"BIPES Serial, USB or Bluetooth","settings":{"id":"11","refresh":1}},{"name":"Luminosidade","type":"BIPES Serial, USB or Bluetooth","settings":{"id":"13","refresh":1}}],"columns":4}]]></freeboard>
+    <databoard><![CDATA[{"currentWorkspace":"kvfgejtdtlhg0wfqod9","workspace:kvfgejtdtlhg0wfqod9":[]}]]></databoard> 
+  </workspace>
+  <variables>
+    <variable id="_B_(5klg%mU?mYV]=$%o">bat</variable>
+    <variable id="ufl=?n(0~ud3Q4nGL36%">tempe</variable>
+    <variable id="%gc$j[%Rj?7yftDLeuZ,">humi</variable>
+    <variable id="WJ7UoHgKEC9E-g4rr18g">luminosidade</variable>
+  </variables>
+  <block type="timer" id="p1fy?5WI2lW(oud8tqq4" x="-38" y="-12">
+    <field name="timerNumber">9</field>
+    <field name="MODE">PERIODIC</field>
+    <field name="interval">10000</field>
+    <statement name="statements">
+      <block type="variables_set" id="#@n:fe(723Yc~3-Y_7@@">
+        <field name="VAR" id="_B_(5klg%mU?mYV]=$%o">bat</field>
+        <value name="VALUE">
+          <block type="esp32_adc" id="DS0!idls%ef{%UQWa;/t">
+            <field name="Attenuation">3</field>
+            <field name="Width: ">3</field>
+            <value name="pin">
+              <shadow type="pinout" id="E6+3c1~g?jinUaHypTkR">
+                <field name="DEVICE">pion_cubesat</field>
+                <field name="PIN">35</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="text_print" id="%#=}1bKLegR@a?M^nx?x">
+            <value name="TEXT">
+              <shadow xmlns="https://bipes.net.br" type="text" id="|4rG(eOanF28zvh*qcV/">
+                <field name="TEXT">abc</field>
+              </shadow>
+              <block type="text_join" id="TNz^RLRAF6DHT[S+sttR">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                  <block type="text" id="W0L#bzs04%;:GCLf*cT#">
+                    <field name="TEXT">Bat</field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="variables_get" id="b]B;f!3NM-{n#x|tU|cS">
+                    <field name="VAR" id="_B_(5klg%mU?mYV]=$%o">bat</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="controls_if" id=":!_?=H32_dwR^Bpb)#M/">
+                <value name="IF0">
+                  <block type="logic_compare" id="MnfwO=/tq}e()PoR}Od)">
+                    <field name="OP">LT</field>
+                    <value name="A">
+                      <block type="variables_get" id="L6`=$*l5V5FqL|^dXZ3h">
+                        <field name="VAR" id="_B_(5klg%mU?mYV]=$%o">bat</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="NT8B`yDh#yI1Cki1.IJ,">
+                        <field name="NUM">500</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="text_print" id="n4rswXzpQ8M!|hT)76EV">
+                    <value name="TEXT">
+                      <shadow xmlns="https://bipes.net.br" type="text">
+                        <field name="TEXT">abc</field>
+                      </shadow>
+                      <block type="text_join" id="==IOtlP%ABtUTv;,dh,t">
+                        <mutation items="2"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="*$KB=OyP/iz,pLg+95CR">
+                            <field name="TEXT">Bat</field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="variables_get" id="i?5/9.~AbAgbJTK,J_0e">
+                            <field name="VAR" id="_B_(5klg%mU?mYV]=$%o">bat</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="tone" id="48$s8L08%s[1SXjr11fN">
+                        <value name="pin">
+                          <shadow type="pinout" id="LAR=~P9Sp*X~(A(Hk#_=">
+                            <field name="DEVICE">pion_cubesat</field>
+                            <field name="PIN">25</field>
+                          </shadow>
+                        </value>
+                        <value name="frequency">
+                          <shadow type="math_number" id="72g%p__%`VPMO+CfLz66">
+                            <field name="NUM">1200</field>
+                          </shadow>
+                        </value>
+                        <value name="duration">
+                          <shadow type="math_number" id="tt,N;[}@jBz?OyR+#xvA">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_whileUntil" id="6ti*,m$tY$%Gt[[PA{u8">
+                    <field name="MODE">WHILE</field>
+                    <value name="BOOL">
+                      <block type="logic_boolean" id="4xDQjDx?Xr-t}lMF`r?~">
+                        <field name="BOOL">TRUE</field>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="sht20_init" id="GdRU`tlT,unJ*~N1-tVs">
+                        <value name="scl">
+                          <shadow type="math_number" id="]loxC6#JpqQ75NIneZmt">
+                            <field name="NUM">22</field>
+                          </shadow>
+                        </value>
+                        <value name="sda">
+                          <shadow type="math_number" id="CdG8bn:{1m|s$Zb{af7[">
+                            <field name="NUM">21</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="variables_set" id="OX5oxH#`H[4X(Nw-I%j9">
+                            <field name="VAR" id="ufl=?n(0~ud3Q4nGL36%">tempe</field>
+                            <value name="VALUE">
+                              <block type="sht20_temperature" id="LU5bh_PZWnF$x}UlO3Fj"></block>
+                            </value>
+                            <next>
+                              <block type="variables_set" id="mdtMvn@kPP0zsnqIWXS-">
+                                <field name="VAR" id="%gc$j[%Rj?7yftDLeuZ,">humi</field>
+                                <value name="VALUE">
+                                  <block type="sht20_humidity" id="rq17Hn%MoKskoC4OOK|~"></block>
+                                </value>
+                                <next>
+                                  <block type="variables_set" id=",l(0l=SS-AOW3x1T.z|b">
+                                    <field name="VAR" id="WJ7UoHgKEC9E-g4rr18g">luminosidade</field>
+                                    <value name="VALUE">
+                                      <block type="esp32_adc" id="3j4C6t@9QYNv)Ea)qrm!">
+                                        <field name="Attenuation">3</field>
+                                        <field name="Width: ">3</field>
+                                        <value name="pin">
+                                          <shadow type="pinout" id="HdT`=^eV.?wCp9[Uj7]?">
+                                            <field name="DEVICE">pion_cubesat</field>
+                                            <field name="PIN">34</field>
+                                          </shadow>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="text_print" id="[)3A}-NHVQ=Ia0P)}fBZ">
+                                        <value name="TEXT">
+                                          <shadow xmlns="https://bipes.net.br" type="text" id="-Z5qf/s8%]`z2cV~q}Ss">
+                                            <field name="TEXT">abc</field>
+                                          </shadow>
+                                          <block type="text_join" id="i,NgF-i^Fv3si[$/gu;:">
+                                            <mutation items="2"></mutation>
+                                            <value name="ADD0">
+                                              <block type="text" id="2Rr@KjJ(80O7iDxd-t]|">
+                                                <field name="TEXT">T- </field>
+                                              </block>
+                                            </value>
+                                            <value name="ADD1">
+                                              <block type="variables_get" id="f*%@wZ;Je6U9IQd){bWg">
+                                                <field name="VAR" id="%gc$j[%Rj?7yftDLeuZ,">humi</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="text_print" id=")]]Cj!a#]%k8/O}l.(RN">
+                                            <value name="TEXT">
+                                              <shadow xmlns="https://bipes.net.br" type="text">
+                                                <field name="TEXT">abc</field>
+                                              </shadow>
+                                              <block type="text_join" id="sj,$6{?$nxEF?1X?F@/0">
+                                                <mutation items="2"></mutation>
+                                                <value name="ADD0">
+                                                  <block type="text" id="N:yz$}=*c5i_o9/]jSa(">
+                                                    <field name="TEXT">H- </field>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                  <block type="variables_get" id="v~-`KATB[h9UA#LW%rCW">
+                                                    <field name="VAR" id="ufl=?n(0~ud3Q4nGL36%">tempe</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="text_print" id="l0PM_{~Kjn~my$e*r|5,">
+                                                <value name="TEXT">
+                                                  <shadow xmlns="https://bipes.net.br" type="text">
+                                                    <field name="TEXT">abc</field>
+                                                  </shadow>
+                                                  <block type="text_join" id="XXRJqWUig@qTdQ$v4wS{">
+                                                    <mutation items="2"></mutation>
+                                                    <value name="ADD0">
+                                                      <block type="text" id="d|);*hv/ae-xBAf:SRx*">
+                                                        <field name="TEXT">L- </field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="ADD1">
+                                                      <block type="variables_get" id="zCGH?Lje^ryp?7cIn$2r">
+                                                        <field name="VAR" id="WJ7UoHgKEC9E-g4rr18g">luminosidade</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="bipes_plot" id="Lh)YZ(Vs{NJK!4CAGh$v">
+                                                    <value name="id">
+                                                      <block type="math_number" id="b!#`wY(a:`r{eFppj=e)">
+                                                        <field name="NUM">11</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="values">
+                                                      <block type="variables_get" id="LiV{bjR3flEU_XX*l3tt">
+                                                        <field name="VAR" id="%gc$j[%Rj?7yftDLeuZ,">humi</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="bipes_plot" id="tv!b!3QS}g[yW%b#,wpu">
+                                                        <value name="id">
+                                                          <block type="math_number" id="~:h;rFMqjak%;i(L/B#3">
+                                                            <field name="NUM">12</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="values">
+                                                          <block type="variables_get" id="GXVD_)X]pEt}!Re(9BA7">
+                                                            <field name="VAR" id="ufl=?n(0~ud3Q4nGL36%">tempe</field>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="bipes_plot" id="9FL0U7{nExiI//8:1E)W">
+                                                            <value name="id">
+                                                              <block type="math_number" id="j;#wR32x2Gd_!I$TZkeF">
+                                                                <field name="NUM">13</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="values">
+                                                              <block type="variables_get" id="Ey{K?/oPvp2zY)ScLDn*">
+                                                                <field name="VAR" id="WJ7UoHgKEC9E-g4rr18g">luminosidade</field>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="ccs811_init" id="yLXnDx9?~w,HO|$#fjnE">
+                                                                <value name="scl">
+                                                                  <shadow type="math_number" id="1m}]v3.U[S=_@!4u[qnu">
+                                                                    <field name="NUM">22</field>
+                                                                  </shadow>
+                                                                </value>
+                                                                <value name="sda">
+                                                                  <shadow type="math_number" id="WJprN53[43p9-@pN#b+[">
+                                                                    <field name="NUM">21</field>
+                                                                  </shadow>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="controls_if" id="$)pKk:nf:(9Rj-d+WvN_">
+                                                                    <value name="IF0">
+                                                                      <block type="ccs811_data_ready" id="4RrgvCqE?Em],YsWE@=V"></block>
+                                                                    </value>
+                                                                    <statement name="DO0">
+                                                                      <block type="text_print" id="i!|Yy=prq*0$pFo/1/H7">
+                                                                        <value name="TEXT">
+                                                                          <shadow type="text" id="_cYdw2$r=cbx~5(.#N3=">
+                                                                            <field name="TEXT">abc</field>
+                                                                          </shadow>
+                                                                          <block type="text_join" id="!L;1Jqy/5*g|c2.^Kx]:">
+                                                                            <mutation items="2"></mutation>
+                                                                            <value name="ADD0">
+                                                                              <block type="text" id="D@L*-qf/oax^tbKRN3Cu">
+                                                                                <field name="TEXT">Co2-</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="ADD1">
+                                                                              <block type="ccs811_eCO2" id="_{;v?R`h1,ko`Ae_Na+W"></block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </statement>
+                                                                    <next>
+                                                                      <block type="delay" id="`Ndx?(dJv;lBy.Oa6+/)">
+                                                                        <field name="SCALE">sleep</field>
+                                                                        <value name="TIME">
+                                                                          <shadow type="math_number" id="v]kUaPBsNg#rtxLlz%zH">
+                                                                            <field name="NUM">3</field>
+                                                                          </shadow>
+                                                                        </value>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

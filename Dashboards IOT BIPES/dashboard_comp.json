@@ -1,0 +1,107 @@
+{
+	"version": 1,
+	"allow_edit": true,
+	"plugins": [],
+	"panes": [
+		{
+			"width": 1,
+			"row": {
+				"3": 1,
+				"4": 1
+			},
+			"col": {
+				"3": 1,
+				"4": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "Temperatura",
+						"value": [
+							"datasources[\"Temperatura\"]"
+						],
+						"min_value": 0,
+						"max_value": 100
+					}
+				}
+			]
+		},
+		{
+			"width": 1,
+			"row": {
+				"3": 9,
+				"4": 1
+			},
+			"col": {
+				"3": 1,
+				"4": 2
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "Humidade",
+						"value": [
+							"datasources[\"Humidade\"]"
+						],
+						"min_value": 0,
+						"max_value": 100
+					}
+				}
+			]
+		},
+		{
+			"width": 1,
+			"row": {
+				"3": 1,
+				"4": 1
+			},
+			"col": {
+				"3": 3,
+				"4": 3
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "Luminosidade",
+						"value": "datasources[\"Luminosidade\"]",
+						"min_value": 0,
+						"max_value": 100
+					}
+				}
+			]
+		}
+	],
+	"datasources": [
+		{
+			"name": "Temperatura",
+			"type": "BIPES Serial, USB or Bluetooth",
+			"settings": {
+				"id": "12",
+				"refresh": 1
+			}
+		},
+		{
+			"name": "Humidade",
+			"type": "BIPES Serial, USB or Bluetooth",
+			"settings": {
+				"id": "11",
+				"refresh": 1
+			}
+		},
+		{
+			"name": "Luminosidade",
+			"type": "BIPES Serial, USB or Bluetooth",
+			"settings": {
+				"id": "13",
+				"refresh": 1
+			}
+		}
+	],
+	"columns": 4
+}
