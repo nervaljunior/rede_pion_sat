@@ -34,7 +34,7 @@
           <block type="text_print" id="%#=}1bKLegR@a?M^nx?x">
             <value name="TEXT">
               <shadow xmlns="https://bipes.net.br" type="text" id="|4rG(eOanF28zvh*qcV/">
-                <field name="TEXT">abc</field>
+                <field name="TEXT">abcc</field>
               </shadow>
               <block type="text_join" id="TNz^RLRAF6DHT[S+sttR">
                 <mutation items="2"></mutation>

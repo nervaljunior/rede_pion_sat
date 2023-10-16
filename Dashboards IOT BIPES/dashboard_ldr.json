@@ -39,7 +39,7 @@
 				{
 					"type": "sparkline",
 					"settings": {
-						"title": "LDR",
+						"title": "LDR_Graf",
 						"value": "datasources[\"LDR\"]",
 						"include_legend": true,
 						"legend": "LDR"
