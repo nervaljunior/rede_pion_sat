@@ -1,10 +1,11 @@
-# REDE PARA CAPTAçÃO DE DADOS VINDOS DE SATÉLITE  [CUBESAT PION](https://github.com/pion-labs/pion-educational-kits/wiki). 
+# REDE PARA CAPTAÇÃO DE DADOS VINDOS DE SATÉLITE  [CUBESAT PION](https://github.com/pion-labs/pion-educational-kits/wiki). 
 
 Projeto de uma rede para extração de dados de um satélite CubeSat Pion.
 
 ## 🚀 Começando
 
--
+-[EBOOK](https://bipes.net.br/ide/) - Programação de CanSats PION e CubeSats PION por blocos usando BIPES
+
 
 ### 📋 Pré-requisitos
 
@@ -26,21 +27,7 @@ esp32-20210902-v1.17.bin | ESP32 with BLE and Wifi | https://micropython.org/dow
 
 ### 🔧 Instalação
 
-Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
-
-Diga como essa etapa será:
-
-```
-Dar exemplos
-```
-
-E repita:
-
-```
-Até finalizar
-```
-
-Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
+-
 
 ## ⚙️ Executando os testes
 
@@ -64,9 +51,9 @@ Nós usamos [GitHub](https://github.com) para controle de versão. Para as vers�
 
 ## ✒️ Autores
 
-* **AMPC** - *Documentação - Dev - Engenheiro* - [umdesenvolvedor](https://github.com/TonyMPCastro)
-* **Nerval** - *Documentação - Dev - Engenheiro* - [umdesenvolvedor]()
-* **Guilherme** - *Documentação -Dev - Engenheiro* - [fulanodetal]()
+* **AMPC** - *Documentação - Dev - Engenheiro* - [AMPC](https://github.com/TonyMPCastro)
+* **Nerval** - *Documentação - Dev - Engenheiro* - [PERFIL]()
+* **Guilherme** - *Documentação -Dev - Engenheiro* - [PERFIL]()
 
 
 ## 📄 Licença
@@ -78,5 +65,4 @@ Este projeto está sob a licença (Copyright (c) 2023 Antonio Marcos Patricio Ca
 * Conte a outras pessoas sobre este projeto 📢;
 * Convide alguém da equipe para uma cerveja 🍺;
 * Um agradecimento publicamente 🫂;
-* etc.
 
