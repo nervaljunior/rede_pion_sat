@@ -2,12 +2,13 @@
 
 Projeto de uma rede para extração de dados de um satélite CubeSat Pion.
 
+## 📌 Planejamento
+[![Tracking_Rede_Pion_Sat](https://github.com/TonyMPCastro/rede_pion_sat/blob/main/Tracking_Rede_Pion_Sat.png)](https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFydmue6dk&#x2F;view?utm_content=DAFydmue6dk&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link)
+
+
 ## 🚀 Começando
 
 -[EBOOK](https://github.com/TonyMPCastro/rede_pion_sat/blob/main/eBook_Kits_OBSAT_23_02_2022.pdf) - Programação de CanSats PION e CubeSats PION por blocos usando BIPES.
-
-## 📌 Planejamento
-[![Tracking_Rede_Pion_Sat](https://github.com/TonyMPCastro/rede_pion_sat/blob/main/Tracking_Rede_Pion_Sat.png)](https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFydmue6dk&#x2F;view?utm_content=DAFydmue6dk&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link)
 
 
 ### 📋 Pré-requisitos
