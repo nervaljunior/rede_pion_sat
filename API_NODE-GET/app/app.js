@@ -20,7 +20,7 @@ app.get("/", (req, res, next) => {
       id: 1,
       name: "Exemplo API",
       version: "1.0.0",
-      description: "API DE REGISTRO DE DADOS"
+      description: "API DE CONSULTA DE DADOS"
     }
   }
 
