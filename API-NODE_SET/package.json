@@ -1,0 +1,16 @@
+{
+  "name": "api-node-docker",
+  "version": "1.0.0",
+  "description": "API NODE BASICA PARA USO NO Docker",
+  "main": "app/app.js",
+  "author": "AMPC",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app/app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.6.1"
+  }
+}

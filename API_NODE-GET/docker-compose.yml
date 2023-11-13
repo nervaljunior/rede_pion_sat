@@ -1,0 +1,15 @@
+
+version: "3"
+
+services:
+  node:
+    build: .
+    container_name: my_node_get
+    command: "npm run start"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    expose:
+      - "3034"
+    ports:
+      - "3034:3034"
