@@ -3,7 +3,7 @@ let connectionRequest = require('./connectionRequest')
 
 
 const app = express();
-const port = process.env.PORT || 3033;
+const port = process.env.PORT || 3034;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
