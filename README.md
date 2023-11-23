@@ -60,7 +60,7 @@ Nós usamos [GitHub](https://github.com) para controle de versão. Para as vers�
 ## ✒️ Autores
 
 * **AMPC** - *Documentação - Dev - Engenheiro* - [AMPC](https://github.com/TonyMPCastro)
-* **Nerval** - *Documentação - Dev - Engenheiro* - [PERFIL]()
+* **Nerval** - *Documentação - Dev - Engenheiro* - [PERFIL](https://github.com/nervaljunior)
 * **Guilherme** - *Documentação -Dev - Engenheiro* - [PERFIL]()
 
 

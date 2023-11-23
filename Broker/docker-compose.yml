@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  my_python:
+    build: .
+    container_name: my_python
+    ports:
+      - "8092:5000"
+    volumes:
+      - .:/code
+    networks:
+        - REDE
+networks:
+  REDE:
+    external: true

@@ -1,0 +1,57 @@
+version: '3.8'
+
+volumes:
+  VOL2:
+    external: true
+
+networks:
+  REDE:
+    external: true
+
+
+
+services:
+  mqtt-pub:
+    image: eclipse-mosquitto:latest
+    command: sh -c "mosquitto_pub -h mqtt_broker -t "/message" -m 'antonio'"
+    depends_on:
+        - mqtt_broker
+    networks:
+        - REDE
+    container_name: my_mqtt_pub
+  mqtt_broker:
+    image: eclipse-mosquitto:latest
+    container_name: my_broker
+    ports:
+        - 1883:1883
+    expose:
+      - 1883
+
+    volumes:
+        - VOL2:/mosquitto/config:/mosquitto/config
+        - VOL2:/mosquitto/data:/mosquitto/data
+        - VOL2:/mosquitto/log:/mosquitto/log
+    networks:
+        - REDE
+
+  web:
+
+    external_links:
+     - mosquitto:eclipse-mosquitto
+    build: .
+    ports:
+      - "3035:5000"
+
+    command: python -u app.py
+    volumes:
+      - .:/code
+
+    container_name: my_python
+    expose:
+          - 3035
+    depends_on:
+      - mosquitto
+    networks:
+      - REDE
+
+

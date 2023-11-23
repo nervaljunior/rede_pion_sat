@@ -2,12 +2,10 @@ import paho.mqtt.client as mqtt
 import requests
 import json
 
-mqtt_broker = "193.203.174.233"
-mqtt_port = 1883
-mqtt_topic = "messages"
 
-mqtt_user = "user1"
-mqtt_pw = "123"
+mqtt_broker = "mosquitto"
+mqtt_port = 1883
+mqtt_topic = "/messages"
 
 api_url="http://193.203.174.233:3033"
 api_endpoint="/set_log"
@@ -36,8 +34,6 @@ def enviar_para_api(data):
 
 client = mqtt.Client()
 client.on_message = on_message
-
-client.username_pw_set(mqtt_user, mqtt_pw)
 
 client.connect(mqtt_broker, mqtt_port, 60)
 
