@@ -2,7 +2,8 @@ import paho.mqtt.client as mqtt
 import requests
 import json
 
-mqtt_broker = "localhost"
+
+mqtt_broker = "mosquitto"
 mqtt_port = 1883
 mqtt_topic = "/messages"
 

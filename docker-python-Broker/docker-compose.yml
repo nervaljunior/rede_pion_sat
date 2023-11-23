@@ -1,0 +1,50 @@
+version: '3.8'
+
+volumes:
+  VOL2:
+    external: true
+
+networks:
+  REDE:
+    external: true
+
+
+
+services:
+
+  mqtt-pub:
+    image: eclipse-mosquitto:latest
+    command: sh -c "mosquitto_pub -h mqtt_broker -t "/message" -m 'antonio'"
+    depends_on:
+      - mqtt_broker
+    networks:
+      REDE: 
+        ipv4_address: 172.18.10.12
+    container_name: my_mqtt_pub
+
+  mqtt_broker:
+
+    image: eclipse-mosquitto:latest
+    container_name: my_broker
+    user: mosquitto
+    ports:
+      - target: 1883
+        published: 1883
+        protocol: tcp
+        mode: host
+      - target: 9001
+        published: 9001
+        protocol: tcp
+        mode: host
+    expose:
+      - 1883
+
+    volumes:
+        - VOL2:/mosquitto/config:/mosquitto/config
+        - VOL2:/mosquitto/data:/mosquitto/data
+        - VOL2:/mosquitto/log:/mosquitto/log
+    networks:
+      REDE: 
+        ipv4_address: 172.18.10.11
+
+
