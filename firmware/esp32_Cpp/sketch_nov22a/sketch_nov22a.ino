@@ -74,7 +74,7 @@ void loop() {
   Serial.println("JSON enviado via MQTT:");
   Serial.println(jsonBuffer);
 
-  client.publish("/messages", jsonBuffer);
+  client.publish("messages", jsonBuffer);
 
   delay(10000);  
 }
