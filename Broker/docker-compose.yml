@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  my_python:
+    build: .
+    ports:
+      - "8092:5000"
+    volumes:
+      - .:/code
+    networks:
+        - REDE
