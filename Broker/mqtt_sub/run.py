@@ -22,7 +22,7 @@ def on_message(client, userdata, msg):
 def enviar_para_api(data):
     try:
         payload = {
-        "client": 10,
+        "client": 20,
         "dados": data}
 
         response = requests.post(api_url + api_endpoint, data=json.dumps(payload), headers=api_headers)
