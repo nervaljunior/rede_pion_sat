@@ -4,9 +4,9 @@ import json
 
 mqtt_broker = "193.203.174.233"
 mqtt_port = 1883
-mqtt_topic = "/messages"
+mqtt_topic = "messages"
 
-mqtt_user = "user"
+mqtt_user = "user1"
 mqtt_pw = "123"
 
 api_url="http://193.203.174.233:3033"
